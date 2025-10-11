@@ -1,5 +1,12 @@
 {
+<<<<<<< HEAD
   "name": "ionic-app-base",
   "integrations": {},
+=======
+  "name": "meu-app-combustivel",
+  "integrations": {
+    "capacitor": {}
+  },
+>>>>>>> 2f0881fca46ad2e7485bf20df6391a3fb0b9d416
   "type": "angular-standalone"
 }
