@@ -1,0 +1,12 @@
+.logo-historico {
+  // Define uma largura máxima para a logo não ficar gigante
+  max-width: 250px; 
+  
+  // Um truque para centralizar a imagem horizontalmente
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  // Adiciona um espaço embaixo da logo
+  margin-bottom: 20px;
+}
