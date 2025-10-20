@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>historico</ion-title>
@@ -11,3 +12,42 @@
     </ion-toolbar>
   </ion-header>
 </ion-content>
+=======
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Histórico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-img class="logo-historico" src="/assets/logo.png"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  @if (historico.length === 0) {
+    <div class="ion-text-center">
+      <p>Nenhum registro no histórico ainda.</p>
+    </div>
+  } @else {
+    <ion-list>
+      @for (item of historico; track item.data) {
+        <ion-item>
+          <ion-label>
+            <h2>{{ item.posto }}</h2>
+            <p>Álcool: R$ {{ item.alcool }} | Gasolina: R$ {{ item.gasolina }}</p>
+            <p><b>{{ item.resultado }}</b></p>
+            <p><small>{{ item.data }}</small></p>
+          </ion-label>
+        </ion-item>
+      }
+    </ion-list>
+  }
+</ion-content>
+>>>>>>> 9a4f2997795ce692f056054074eb6feaef0d3cbb
