@@ -10,4 +10,8 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'historico',
+    loadComponent: () => import('./historico/historico.page').then( m => m.HistoricoPage)
+  },
 ];
