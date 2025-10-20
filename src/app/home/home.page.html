@@ -1,11 +1,15 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Álcool ou Gasolina</ion-title>
-    <ion-buttons slot="end">
-      <ion-button routerLink="/historico">
-        <ion-icon slot="icon-only" name="bookmarks-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
+    <ion-button
+      routerLink="/historico"
+      expand="full"
+      color="secondary"
+      class="ion-margin-top"
+    >
+      <ion-icon slot="start" name="bookmarks-outline"></ion-icon>
+      Teste para Histórico
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -21,16 +25,18 @@
       </ion-col>
 
       <ion-col size="12">
-        <ion-item>
-          <ion-label position="stacked">Nome do Posto (Opcional)</ion-label>
+        <ion-item fill="outline" shape="round" class="ion-margin-bottom">
+          <ion-label position="floating">Nome do Posto (Opcional)</ion-label>
           <ion-input type="text" [(ngModel)]="nomePosto"></ion-input>
         </ion-item>
-        <ion-item>
-          <ion-label position="stacked">Preço álcool, ex: 3.50</ion-label>
+
+        <ion-item fill="outline" shape="round" class="ion-margin-bottom">
+          <ion-label position="floating">Preço álcool, ex: 3.50</ion-label>
           <ion-input type="number" [(ngModel)]="precoAlcool"></ion-input>
         </ion-item>
-        <ion-item>
-          <ion-label position="stacked">Preço gasolina, ex: 5.00</ion-label>
+
+        <ion-item fill="outline" shape="round" class="ion-margin-bottom">
+          <ion-label position="floating">Preço gasolina, ex: 5.00</ion-label>
           <ion-input type="number" [(ngModel)]="precoGasolina"></ion-input>
         </ion-item>
 
@@ -39,11 +45,11 @@
     </ion-row>
 
     @if (resultado) {
-      <ion-row>
-        <ion-col size="12">
-          <h5 class="ion-text-center">{{resultado}}</h5>
-        </ion-col>
-      </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <h5 class="ion-text-center">{{resultado}}</h5>
+      </ion-col>
+    </ion-row>
     }
   </ion-grid>
 </ion-content>

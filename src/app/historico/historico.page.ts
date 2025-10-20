@@ -5,6 +5,7 @@ import {
   IonGrid, IonRow, IonCol, IonImg
 } from '@ionic/angular/standalone';
 // Lembre-se que seu arquivo se chama 'storage', então este import está correto
+
 import { StorageService, HistoricoItem } from '../services/storage';
 
 @Component({

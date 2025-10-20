@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-// Importamos o RouterModule para a navegação funcionar
+// 1. Importe o RouterModule aqui
 import { RouterModule } from '@angular/router';
 import {
   IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow,
@@ -9,7 +9,7 @@ import {
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import { bookmarksOutline } from 'ionicons/icons';
-// Lembre-se que seu arquivo se chama 'storage', então o import está correto aqui
+
 import { StorageService, HistoricoItem } from '../services/storage';
 
 @Component({
@@ -19,28 +19,26 @@ import { StorageService, HistoricoItem } from '../services/storage';
   standalone: true,
   imports: [
     FormsModule,
-    RouterModule, // Adicionamos o RouterModule para a navegação
-    IonHeader, IonToolbar, IonTitle, IonContent, IonGrid, IonRow,
-    IonCol, IonImg, IonItem, IonLabel, IonInput, IonButton,
-    IonButtons, IonIcon
+    IonHeader, IonToolbar, IonTitle, IonContent, IonGrid,
+    IonRow, IonCol, IonImg, IonItem, IonLabel, IonInput, IonButton,
+    IonButtons, IonIcon,
+    // 2. Adicione o RouterModule aqui também
+    RouterModule
   ],
 })
 export class HomePage {
-
+  // O resto do seu código continua exatamente igual...
   public resultado: string | null = null;
   precoAlcool: number | null = null;
   precoGasolina: number | null = null;
   nomePosto: string = '';
 
   constructor(private storageService: StorageService) {
-    // Adiciona o ícone para ser usado no HTML
     addIcons({ bookmarksOutline });
   }
 
   async calcular() {
-    // Validamos se AMBOS os campos foram preenchidos
     if (this.precoAlcool != null && this.precoGasolina != null) {
-
       const razao = this.precoAlcool / this.precoGasolina;
       let melhorOpcao = '';
 
@@ -51,7 +49,6 @@ export class HomePage {
       }
       this.resultado = melhorOpcao;
 
-      // Prepara o objeto para salvar no histórico
       const novoHistorico: HistoricoItem = {
         posto: this.nomePosto || 'Não informado',
         alcool: this.precoAlcool,
@@ -59,10 +56,7 @@ export class HomePage {
         resultado: melhorOpcao,
         data: new Date().toLocaleString('pt-BR')
       };
-
-      // Salva os dados usando o nosso serviço
       await this.storageService.saveHistory(novoHistorico);
-
     } else {
       this.resultado = 'Por favor, preencha ambos os preços!';
     }
