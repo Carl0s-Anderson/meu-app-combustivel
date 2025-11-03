@@ -1,0 +1,19 @@
+# Configuração de Build
+[build]
+  # Comando que o Netlify vai rodar para construir o site
+  command = "ionic build --prod"
+  
+  # Pasta que o Netlify vai publicar (o resultado do build)
+  publish = "www"
+
+# Regra de Redirecionamento (A MÁGICA ESTÁ AQUI)
+[[redirects]]
+  # De: qualquer URL
+  from = "/*"
+  
+  # Para: o arquivo principal
+  to = "/index.html"
+  
+  # Status: 200 (OK)
+  status = 200
+
