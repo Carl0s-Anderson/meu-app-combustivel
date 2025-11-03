@@ -1,7 +1,7 @@
 # Configuração de Build
 [build]
   # Comando que o Netlify vai rodar para construir o site
-  command = " npx ng build --prod"
+  command = "npx ng build"
   
   # Pasta que o Netlify vai publicar (o resultado do build)
   publish = "www"
