@@ -1,0 +1,62 @@
+// CSS para dar vida aos cards de estatística
+
+ion-content {
+  // Um fundo levemente diferente
+  --background: #f4f5f8;
+}
+
+.stat-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 16px;
+
+  ion-card-subtitle {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: var(--ion-color-medium-shade);
+    font-size: 0.9em;
+
+    ion-icon {
+      margin-right: 8px;
+      font-size: 1.2em;
+      color: var(--ion-color-primary);
+    }
+  }
+
+  h2,
+  h3 {
+    font-weight: 700;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  .preco-alcool {
+    color: var(--ion-color-success, #2dd36f);
+  }
+
+  .preco-gasolina {
+    color: var(--ion-color-danger, #eb445a);
+  }
+
+  .indicador-texto {
+    font-weight: 500;
+    margin-bottom: 16px;
+    font-style: italic;
+    color: var(--ion-color-dark-shade);
+  }
+}
+
+.disabled-card {
+  --background: #fafafa;
+  border: 1px dashed var(--ion-color-medium-tint);
+
+  ion-card-subtitle ion-icon {
+    color: var(--ion-color-medium-shade);
+  }
+
+  p {
+    font-size: 0.9em;
+    color: var(--ion-color-medium-shade);
+  }
+}

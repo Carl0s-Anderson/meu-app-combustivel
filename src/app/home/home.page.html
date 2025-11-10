@@ -1,7 +1,6 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Álcool ou Gasolina</ion-title>
-    <!-- Removi o botão de teste daqui para um local melhor -->
   </ion-toolbar>
 </ion-header>
 
@@ -32,34 +31,49 @@
           <ion-input type="number" [(ngModel)]="precoGasolina"></ion-input>
         </ion-item>
 
-        <ion-button expand="full" (click)="calcular()">Calcular</ion-button>
+        <ion-button expand="full" (click)="calcular()">
+          <ion-icon slot="start" name="calculator-outline"></ion-icon>
+          Calcular
+        </ion-button>
       </ion-col>
     </ion-row>
 
     @if (resultado) {
-    <ion-row>
-      <ion-col size="12" class="ion-text-center">
-        <h5>{{resultado}}</h5>
-      </ion-col>
-    </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <!-- Este é um estilo melhor para o resultado, para dar cor -->
+          <div
+            class="ion-text-center ion-padding ion-margin-top result-box"
+            [class.resultado-alcool]="resultado.includes('Álcool')"
+            [class.resultado-gasolina]="resultado.includes('Gasolina')"
+          >
+            <h5>{{ resultado }}</h5>
+          </div>
+        </ion-col>
+      </ion-row>
     }
 
-    <!-- Seção de Botões de Navegação -->
+    <!-- Botões de Navegação -->
     <ion-row class="ion-margin-top">
-      <ion-col size="6">
-        <ion-button routerLink="/historico" expand="full" color="secondary" shape="round">
+      <ion-col size="12" size-md="4">
+        <ion-button expand="full" fill="outline" routerLink="/historico">
           <ion-icon slot="start" name="bookmarks-outline"></ion-icon>
           Histórico
         </ion-button>
       </ion-col>
-      <ion-col size="6">
-        <!-- NOVO BOTÃO PARA CADASTRO DE VEÍCULO -->
-        <ion-button routerLink="/cadastro-veiculo" expand="full" color="tertiary" shape="round">
+      <ion-col size="12" size-md="4">
+        <ion-button expand="full" fill="outline" routerLink="/cadastro-veiculo">
           <ion-icon slot="start" name="car-sport-outline"></ion-icon>
           Veículo
         </ion-button>
       </ion-col>
+      <!-- NOVO BOTÃO ADICIONADO AQUI -->
+      <ion-col size="12" size-md="4">
+        <ion-button expand="full" fill="outline" routerLink="/desempenho">
+          <ion-icon slot="start" name="stats-chart-outline"></ion-icon>
+          Desempenho
+        </ion-button>
+      </ion-col>
     </ion-row>
-
   </ion-grid>
 </ion-content>

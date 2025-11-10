@@ -13,10 +13,18 @@ export const routes: Routes = [
   {
     path: 'historico',
     loadComponent: () => import('./historico/historico.page').then( m => m.HistoricoPage)
-  },  {
+  },
+  {
     path: 'cadastro-veiculo',
     loadComponent: () => import('./cadastro-veiculo/cadastro-veiculo.page').then( m => m.CadastroVeiculoPage)
   },
-
+  {
+    path: 'desempenho',
+    loadComponent: () => import('./desempenho/desempenho.page').then( m => m.DesempenhoPage)
+  },
+{
+  path: 'desempenho',
+  loadComponent: () => import('./desempenho/desempenho.page').then( m => m.DesempenhoPage)
+},
  
 ];
