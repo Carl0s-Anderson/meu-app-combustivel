@@ -21,10 +21,5 @@ export const routes: Routes = [
   {
     path: 'desempenho',
     loadComponent: () => import('./desempenho/desempenho.page').then( m => m.DesempenhoPage)
-  },
-{
-  path: 'desempenho',
-  loadComponent: () => import('./desempenho/desempenho.page').then( m => m.DesempenhoPage)
-},
- 
+  }, 
 ];
