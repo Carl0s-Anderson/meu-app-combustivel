@@ -21,13 +21,11 @@ import { StorageService, HistoricoItem } from '../services/storage';
     FormsModule,
     IonHeader, IonToolbar, IonTitle, IonContent, IonGrid,
     IonRow, IonCol, IonImg, IonItem, IonLabel, IonInput, IonButton,
-    IonButtons, IonIcon,
-    // 2. Adicione o RouterModule aqui também
-    RouterModule
+    IonButtons, IonIcon,RouterModule
   ],
 })
 export class HomePage {
-  // O resto do seu código continua exatamente igual...
+
   public resultado: string | null = null;
   precoAlcool: number | null = null;
   precoGasolina: number | null = null;

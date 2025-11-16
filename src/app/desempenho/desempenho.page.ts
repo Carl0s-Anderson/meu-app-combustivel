@@ -60,7 +60,7 @@ import { StorageService, HistoricoItem } from '../services/storage';
   ],
 })
 export class DesempenhoPage {
-  // Variáveis para guardar as estatísticas
+  // Variáveis
   mediaAlcool: number = 0;
   mediaGasolina: number = 0;
   totalRegistros: number = 0;
@@ -71,7 +71,7 @@ export class DesempenhoPage {
     'Lembre-se: o álcool só é vantajoso se custar 70% ou menos que o preço da gasolina.';
 
   constructor(private storageService: StorageService) {
-    // Adiciona os ícones que vamos usar
+    // Adiciona os ícones que usar
     addIcons({
       calculatorOutline,
       trendingUpOutline,
@@ -90,7 +90,7 @@ export class DesempenhoPage {
     const historico = await this.storageService.getHistory();
     this.totalRegistros = historico.length;
 
-    // Se não houver histórico, não faz nada
+    // Se não houver histórico não faz nada
     if (this.totalRegistros === 0) {
       this.mediaAlcool = 0;
       this.mediaGasolina = 0;
@@ -117,7 +117,7 @@ export class DesempenhoPage {
     ).length;
     this.vantagensGasolina = this.totalRegistros - this.vantagensAlcool;
 
-    // Pega os 5 últimos registros (ou menos, se não houver 5)
+    // Pega os 5 últimos registros ou menos se não houver 5
     const ultimos5Registros = historico.slice(0, 5);
     const vantagensAlcoolUltimos5 = ultimos5Registros.filter((item) =>
       item.resultado.includes('Álcool')

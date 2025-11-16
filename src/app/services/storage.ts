@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Preferences } from '@capacitor/preferences';
 
-// Defini uma interface para organizar o que salvamos
+
 export interface HistoricoItem {
   posto: string;
   alcool: number;
